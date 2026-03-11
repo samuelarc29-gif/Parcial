@@ -1,57 +1,5 @@
 SAMUEL ANDRES RENGIFO CORTES
 
-classDiagram
-    class Libro {
-        -String titulo
-        -String autor
-        -int numeroEjemplares
-        -int numeroEjemplaresPrestados
-        +Libro()
-        +Libro(String titulo, String autor, int numeroEjemplares, int numeroEjemplaresPrestados)
-        +getTitulo() String
-        +setTitulo(String titulo) void
-        +getAutor() String
-        +setAutor(String autor) void
-        +getNumeroEjemplares() int
-        +setNumeroEjemplares(int numeroEjemplares) void
-        +getNumeroEjemplaresPrestados() int
-        +setNumeroEjemplaresPrestados(int numeroEjemplaresPrestados) void
-        +prestamo() boolean
-        +devolucion() boolean
-        +toString() String
-    }
-
-    class LibroTexto {
-        -String curso
-        +LibroTexto()
-        +LibroTexto(String titulo, String autor, int numeroEjemplares, int numeroEjemplaresPrestados, String curso)
-        +getCurso() String
-        +setCurso(String curso) void
-        +toString() String
-    }
-
-    class LibroTextoUNIAC {
-        -String facultad
-        +LibroTextoUNIAC()
-        +LibroTextoUNIAC(String titulo, String autor, int numeroEjemplares, int numeroEjemplaresPrestados, String curso, String facultad)
-        +getFacultad() String
-        +setFacultad(String facultad) void
-        +toString() String
-    }
-
-    class Novela {
-        -String tipo
-        +Novela()
-        +Novela(String titulo, String autor, int numeroEjemplares, int numeroEjemplaresPrestados, String tipo)
-        +getTipo() String
-        +setTipo(String tipo) void
-        +toString() String
-    }
-
-    Libro <|-- LibroTexto
-    LibroTexto <|-- LibroTextoUNIAC
-    Libro <|-- Novela
-
     Caso 1: si la clase es final
     public final class Libro{}
     Una clase final no puede ser heredada.
@@ -82,4 +30,57 @@ Metodo adicional
 
 public int ejemplaresDisponibles() {
     return numeroEjemplares - numeroEjemplaresPrestados;
-}
+};
+
+## DIAGRAMA DE CLASES
+classDiagram
+    class Libro {
+        - String titulo
+        - String autor
+        - int numueroEjemplares
+        - int numerosEjemplaresPrestados
+        + Libro()
+        + Libro(String, String, int, int)
+        + String getTitulo()
+        + void setTitulo(String)
+        + String getAutor()
+        + void setAutor(String)
+        + int getNumueroEjemplares()
+        + void setNumueroEjemplares(int)
+        + int getNumerosEjemplaresPrestados()
+        + void setNumerosEjemplaresPrestados(int)
+        + boolean prestamo()
+        + boolean devolucion()
+        + String toString()
+    }
+
+    class LibroTexto {
+        - String materia
+        + LibroTexto()
+        + LibroTexto(String, String, int, int, String)
+        + String getMateria()
+        + void setMateria(String)
+        + String toString()
+    }
+
+    class LibroTextoUniajc {
+        - String materia
+        + LibroTextoUniajc()
+        + LibroTextoUniajc(String, String, int, int, String)
+        + String getMateria()
+        + void setMateria(String)
+        + String toString()
+    }
+
+    class Novela {
+        - String genero
+        + Novela()
+        + Novela(String, String, int, int, String)
+        + String getGenero()
+        + void setGenero(String)
+        + String toString()
+    }
+
+    Libro <|-- LibroTexto
+    LibroTexto <|-- LibroTextoUniajc
+    Libro <|-- Novela
