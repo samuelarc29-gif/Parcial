@@ -33,7 +33,10 @@ public int ejemplaresDisponibles() {
 };
 
 ## DIAGRAMA DE CLASES
+
+```mermaid
 classDiagram
+
     class Libro {
         - String titulo
         - String autor
